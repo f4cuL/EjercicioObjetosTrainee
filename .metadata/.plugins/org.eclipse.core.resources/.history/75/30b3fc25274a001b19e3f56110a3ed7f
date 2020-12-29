@@ -1,0 +1,7 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.util.ArrayList;
+
+public class concesionaria {
+	private ArrayList <auto> listaAuto;
+}

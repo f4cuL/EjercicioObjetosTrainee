@@ -1,0 +1,21 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.util.ArrayList;
+
+public class concesionaria {
+	private ArrayList <auto> listaAuto;
+
+	public concesionaria(ArrayList<auto> listaAuto) {
+		super();
+		this.listaAuto = listaAuto;
+	}
+
+	public ArrayList<auto> getListaAuto() {
+		return listaAuto;
+	}
+
+	public void setListaAuto(ArrayList<auto> listaAuto) {
+		this.listaAuto = listaAuto;
+	}
+	
+}

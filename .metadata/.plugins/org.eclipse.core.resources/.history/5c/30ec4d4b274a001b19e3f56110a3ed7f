@@ -1,0 +1,34 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.util.ArrayList;
+
+public class concesionaria {
+	private ArrayList <auto> listaAuto;
+
+	public concesionaria(ArrayList<auto> listaAuto) {
+		super();
+		this.listaAuto = listaAuto;
+	}
+
+	public ArrayList<auto> getListaAuto() {
+		return listaAuto;
+	}
+
+	public void setListaAuto(ArrayList<auto> listaAuto) {
+		this.listaAuto = listaAuto;
+	}
+	
+	//Busqueda mayor precio
+	static auto buscarMasCaro(ArrayList<auto> L)
+	{
+		auto max = L.get(0);
+		for (int i=1 ; i< L.size(); i++)
+		{
+			if (L.get(i).getPrecio() > max.precio)
+			{
+				max=L.get(i);
+			}
+		}
+		return max;
+	}
+}

@@ -1,0 +1,90 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.util.ArrayList;
+
+public class concesionaria {
+	protected ArrayList <auto> listaAuto;
+
+	public concesionaria(ArrayList<auto> listaAuto) {
+		super();
+		this.listaAuto = listaAuto;
+	}
+
+	public ArrayList<auto> getListaAuto() {
+		return listaAuto;
+	}
+
+	public void setListaAuto() {
+		this.listaAuto = listaAuto;
+	}
+	
+	//Busqueda mayor precio
+	static auto buscarMasCaro()
+	{
+		auto max = listaAuto.get(0);
+		for (int i=1 ; i< L.size(); i++)
+		{
+			if (L.get(i).getPrecio() > max.precio)
+			{
+				max=L.get(i);
+			}
+		}
+		return max;
+	}
+	
+	//Busqueda menor precio
+	static auto buscarMasBarato()
+	{
+		auto min = L.get(0);
+		for (int i=1 ; i< L.size(); i++)
+		{
+			if (L.get(i).getPrecio() < min.precio)
+			{
+				min=L.get(i);
+			}
+		}
+		return min;
+	}
+	//Ordenamiento burbuja
+	static boolean ordenarMayorMenor()
+	{
+		for (int i=0 ; i<L.size() ; i++)
+		{
+			for (int j=0; j<L.size()-1 ; j++)
+			{
+				if (L.get(j+1).precio > L.get(j).precio)
+				{
+					auto aux = L.get(j);
+					L.set(j, L.get(j+1));
+					L.set(j+1,aux);				
+				}
+			}
+		}
+		return true;
+	}
+	//Busqueda por letra
+	static auto buscarAutoLetra(ArrayList<auto> Lista, char L)
+	{
+		for (int i =0 ; i<Lista.size() ; i++)
+		{
+			for ( int j=0 ; j <Lista.get(i).getModeloAuto().length() ; j++)
+			{
+				
+				if (Lista.get(i).getModeloAuto().charAt(j) == L )
+				{
+					return Lista.get(i);
+				}
+			}
+		}
+		return null;
+	}
+	//Mostrar list
+	static boolean mostrarLista()
+	{
+		for (int i=0 ; i< L.size() ; i++)
+		{
+			System.out.println(L.get(i).getMarcaAuto() +" "+L.get(i).getModeloAuto());
+		}
+		return true;
+	}
+}

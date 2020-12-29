@@ -1,0 +1,12 @@
+package ejercicioTraineeJavaObjetos;
+
+
+public class main {
+
+	public static void main(String[] args) {
+		
+	 auto Auto1 = new auto("Peugeot","206",4,0,"200.000,00");
+	 Auto1.mostrarAuto(Auto1);
+	}
+
+}

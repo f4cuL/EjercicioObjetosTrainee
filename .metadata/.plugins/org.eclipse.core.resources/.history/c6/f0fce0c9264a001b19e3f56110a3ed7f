@@ -1,0 +1,120 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		
+     //Marca: Peugeot // Modelo: 206 // Puertas: 4 // Precio: $200.000,00
+	 auto Auto1 = new auto("Peugeot","206",4,0,200000.00f);
+	 //Marca: Honda // Modelo: Titan // Cilindrada: 125cc // Precio: $60.000,00
+	 auto Auto2 = new auto("Honda","Titan",4,125,60000.00f);
+	 //Marca: Peugeot // Modelo: 208 // Puertas: 5 // Precio: $250.000,00
+	 auto Auto3 = new auto("Peugeot","208",5,0,250000.00f);
+	 //Marca: Yamaha // Modelo: YBR // Cilindrada: 160cc // Precio: $80.500,50
+	 auto Auto4 = new auto("Yamaha","YBR",4,160,80500.50f);
+	 
+	 Auto1.mostrarAuto(false);
+	 Auto2.mostrarAuto(true);
+	 Auto3.mostrarAuto(false);
+	 Auto4.mostrarAuto(true);
+	 
+	 //Cargar
+	 ArrayList <auto> listaAuto = new ArrayList <auto>(Arrays.asList(Auto1,Auto2,Auto3,Auto4));
+	 
+	 
+	 espacio();
+	 System.out.println("Vehículo más caro: "+ buscarMasCaro(listaAuto).getMarcaAuto() + " " + buscarMasCaro(listaAuto).getModeloAuto());
+	 System.out.println("Vehículo más barato: "+ buscarMasBarato(listaAuto).getMarcaAuto() + " " + buscarMasBarato(listaAuto).getModeloAuto());
+	 System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + buscarAutoLetra(listaAuto, 'Y').getMarcaAuto() + " " + buscarAutoLetra(listaAuto, 'Y').getModeloAuto() + " " + buscarAutoLetra(listaAuto, 'Y').getPrecio());
+	 espacio();
+	 System.out.println("Vehículos ordenados por precio de mayor a menor:");
+	 ordenarMayorMenor(listaAuto);
+	 mostrarLista(listaAuto);
+	 
+	}
+	
+	static void espacio()
+	{
+		System.out.println("=============================");
+	}
+	
+	
+	
+	//Busqueda mayor precio
+	static auto buscarMasCaro(ArrayList<auto> L)
+	{
+		auto max = L.get(0);
+		for (int i=1 ; i< L.size(); i++)
+		{
+			if (L.get(i).getPrecio() > max.precio)
+			{
+				max=L.get(i);
+			}
+		}
+		return max;
+	}
+	
+	//Busqueda menor precio
+	static auto buscarMasBarato(ArrayList<auto> L)
+	{
+		auto min = L.get(0);
+		for (int i=1 ; i< L.size(); i++)
+		{
+			if (L.get(i).getPrecio() < min.precio)
+			{
+				min=L.get(i);
+			}
+		}
+		return min;
+	}
+	
+	//Busqueda por letra
+	static auto buscarAutoLetra(ArrayList<auto> Lista, char L)
+	{
+		for (int i =0 ; i<Lista.size() ; i++)
+		{
+			for ( int j=0 ; j <Lista.get(i).getModeloAuto().length() ; j++)
+			{
+				
+				if (Lista.get(i).getModeloAuto().charAt(j) == L )
+				{
+					return Lista.get(i);
+				}
+			}
+		}
+		return null;
+	}
+	
+
+	//Ordenamiento burbuja
+	static boolean ordenarMayorMenor(ArrayList<auto> L)
+	{
+		for (int i=0 ; i<L.size() ; i++)
+		{
+			for (int j=0; j<L.size()-1 ; j++)
+			{
+				if (L.get(j+1).precio > L.get(j).precio)
+				{
+					auto aux = L.get(j);
+					L.set(j, L.get(j+1));
+					L.set(j+1,aux);				
+				}
+			}
+		}
+		return true;
+	}
+	
+	//Mostrar list
+	static boolean mostrarLista(ArrayList<auto> L)
+	{
+		for (int i=0 ; i< L.size() ; i++)
+		{
+			System.out.println(L.get(i).getMarcaAuto() +" "+L.get(i).getModeloAuto());
+		}
+		return true;
+	}
+}
