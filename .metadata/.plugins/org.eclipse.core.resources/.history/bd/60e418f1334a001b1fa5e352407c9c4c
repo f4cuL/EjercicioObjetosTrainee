@@ -56,9 +56,10 @@ public class auto {
 	
 	boolean mostrarAuto(boolean cilindrada)
 	{
+		String precioMostrar = String.format("%.02f", precio);
 		if (cilindrada==false)
 		{
-			System.out.printf("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Puertas: "+ cantPuertas + " // Precio: $"+ "%.2f\n", precio);
+			System.out.printf("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Puertas: "+ cantPuertas + " // Precio: $"+ precio);
 			return true;
 		}
 		else

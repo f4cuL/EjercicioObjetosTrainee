@@ -34,7 +34,7 @@ public class main{
 	 espacio();
 	 System.out.println("Vehículo más caro: "+ con.buscarMasCaro().getMarcaAuto() + " " + con.buscarMasCaro().getModeloAuto());
 	 System.out.println("Vehículo más barato: "+ con.buscarMasBarato().getMarcaAuto() + " " + con.buscarMasBarato().getModeloAuto());
-	 System.out.printf("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarcaAuto() + " " + con.buscarAutoLetra('Y').getModeloAuto() + " " + "$"+ "%.2f\n",con.buscarAutoLetra('Y').getPrecio());
+	 System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarcaAuto() + " " + con.buscarAutoLetra('Y').getModeloAuto() + " " + "$"+ String.format("%.02f",con.buscarAutoLetra('Y').getPrecio()));
 	 espacio();
 	 System.out.println("Vehículos ordenados por precio de mayor a menor:");
 	 con.ordenarMayorMenor();
