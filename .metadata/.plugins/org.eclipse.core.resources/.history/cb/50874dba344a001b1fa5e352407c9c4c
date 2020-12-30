@@ -57,7 +57,6 @@ public class auto {
 	
 	boolean mostrarAuto(boolean cilindrada)
 	{
-		//DecimalFormat para el formato del precio
 		DecimalFormat unidad = new DecimalFormat("###,###.00");
 		
 		if (cilindrada==false)
@@ -67,7 +66,7 @@ public class auto {
 		}
 		else
 		{
-			System.out.println("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Cilindrada: "+ cilindradaAuto + "cc // Precio: $"+ unidad.format(precio));
+			System.out.printf("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Cilindrada: "+ cilindradaAuto + "cc // Precio: $"+ unidad.format(precio));
 			return true;	
 		}
 	}

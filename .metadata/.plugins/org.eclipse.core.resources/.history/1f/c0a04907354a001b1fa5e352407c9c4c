@@ -1,6 +1,5 @@
 package ejercicioTraineeJavaObjetos;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -31,13 +30,11 @@ public class main{
 	 //Instancia de concesionaria con lista creada
 	 concesionaria con = new concesionaria (new ArrayList <auto>(Arrays.asList(Auto1,Auto2,Auto3,Auto4)));
 	 
-	 //DecimalFormat para el formato del precio
-	 
-	 DecimalFormat unidad = new DecimalFormat("###,###.00");
+
 	 espacio();
 	 System.out.println("Vehículo más caro: "+ con.buscarMasCaro().getMarcaAuto() + " " + con.buscarMasCaro().getModeloAuto());
 	 System.out.println("Vehículo más barato: "+ con.buscarMasBarato().getMarcaAuto() + " " + con.buscarMasBarato().getModeloAuto());
-	 System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarcaAuto() + " " + con.buscarAutoLetra('Y').getModeloAuto() + " " + "$"+ unidad.format(con.buscarAutoLetra('Y').getPrecio()));
+	 System.out.printf("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarcaAuto() + " " + con.buscarAutoLetra('Y').getModeloAuto() + " " + "$"+ "%.2f\n",con.buscarAutoLetra('Y').getPrecio());
 	 espacio();
 	 System.out.println("Vehículos ordenados por precio de mayor a menor:");
 	 con.ordenarMayorMenor();
