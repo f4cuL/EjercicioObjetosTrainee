@@ -2,74 +2,28 @@ package ejercicioTraineeJavaObjetos;
 
 import java.text.DecimalFormat;
 
-public class auto {
+public class auto extends vehiculo {
 
-	protected String marcaAuto;
-	protected String modeloAuto;
 	protected int cantPuertas;
-	protected int cilindradaAuto;
-	protected float precio;
-	
-	public auto(String marcaAuto, String modeloAuto, int cantPuertas, int cilindradaAuto, float precio) {
-		super();
-		this.marcaAuto = marcaAuto;
-		this.modeloAuto = modeloAuto;
+
+	public auto(String marca, String modelo, float precio, int cantPuertas) {
+		super(marca, modelo, precio);
 		this.cantPuertas = cantPuertas;
-		this.cilindradaAuto = cilindradaAuto;
-		this.precio = precio;
-	}
-	
-	public float getPrecio() {
-		return precio;
 	}
 
-
-	public void setPrecio(float precio) {
-		this.precio = precio;
-	}
-
-
-	public String getMarcaAuto() {
-		return marcaAuto;
-	}
-
-	public void setMarcaAuto(String marcaAuto) {
-		this.marcaAuto = marcaAuto;
-	}
-	public String getModeloAuto() {
-		return modeloAuto;
-	}
-	public void setModeloAuto(String modeloAuto) {
-		this.modeloAuto = modeloAuto;
-	}
 	public int getCantPuertas() {
 		return cantPuertas;
 	}
+
 	public void setCantPuertas(int cantPuertas) {
 		this.cantPuertas = cantPuertas;
 	}
-	public int getCilindradaAuto() {
-		return cilindradaAuto;
-	}
-	public void setCilindradaAuto(int cilindradaAuto) {
-		this.cilindradaAuto = cilindradaAuto;
-	}
-	
-	boolean mostrarAuto(boolean cilindrada)
-	{
-		//DecimalFormat para el formato del precio
+
+	// Marca: Peugeot // Modelo: 206 // Puertas: 4 // Precio: $200.000,00
+	@Override
+	public String toString() {
 		DecimalFormat unidad = new DecimalFormat("###,###.00");
-		
-		if (cilindrada==false)
-		{
-			System.out.println("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Puertas: "+ cantPuertas + " // Precio: $"+  unidad.format(precio));
-			return true;
-		}
-		else
-		{
-			System.out.println("Marca: "+ marcaAuto +" // Modelo: " + modeloAuto +" // Cilindrada: "+ cilindradaAuto + "cc // Precio: $"+ unidad.format(precio));
-			return true;	
-		}
+		return "Marca: " + modelo + " // Puertas: " + cantPuertas + " // Precio $" + unidad.format(precio);
 	}
 
 }

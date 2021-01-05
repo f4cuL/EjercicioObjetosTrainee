@@ -1,0 +1,18 @@
+package ejercicioTraineeJavaObjetos;
+
+public class moto extends vehiculo{
+	protected int cilindrada;
+	
+	public moto(int cilindrada, float precio) {
+		super();
+		this.cilindrada = cilindrada;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

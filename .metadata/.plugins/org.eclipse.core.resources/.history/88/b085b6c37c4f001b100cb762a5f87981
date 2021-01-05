@@ -1,0 +1,7 @@
+package ejercicioTraineeJavaObjetos;
+
+public abstract class vehiculo {
+	protected String marca;
+	protected String modelo;
+	protected float precio;
+}

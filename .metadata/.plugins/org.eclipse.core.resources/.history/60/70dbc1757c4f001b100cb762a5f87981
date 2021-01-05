@@ -1,0 +1,9 @@
+package ejercicioTraineeJavaObjetos;
+
+public class moto {
+	protected String marcaAuto;
+	protected String modeloAuto;
+	protected int cantPuertas;
+	protected int cilindradaAuto;
+	protected float precio;
+}

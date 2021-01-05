@@ -4,44 +4,44 @@ import java.util.ArrayList;
 
 public class concesionaria {
 	
-	protected  ArrayList <auto> listaAuto;
+	protected  ArrayList <vehiculo> listaVehiculo;
 
-	public concesionaria(ArrayList<auto> listaAuto) {
+	public concesionaria(ArrayList<vehiculo> listaVehiculo) {
 		super();
-		this.listaAuto = listaAuto;
+		this.listaVehiculo = listaVehiculo;
 	}
 
-	public ArrayList<auto> getListaAuto() {
-		return listaAuto;
+	public ArrayList<vehiculo> getListaAuto() {
+		return listaVehiculo;
 	}
 
-	public void setListaAuto() {
-		this.listaAuto = listaAuto;
+	public void setListaAuto(ArrayList<vehiculo> listaVehiculo) {
+		this.listaVehiculo = listaVehiculo;
 	}
 	
 	//Busqueda mayor precio
-	public auto buscarMasCaro()
+	public vehiculo buscarMasCaro()
 	{
-		auto max = listaAuto.get(0);
-		for (int i=1 ; i< listaAuto.size(); i++)
+		vehiculo max = listaVehiculo.get(0);
+		for (int i=1 ; i< listaVehiculo.size(); i++)
 		{
-			if (listaAuto.get(i).getPrecio() > max.precio)
+			if (listaVehiculo.get(i).getPrecio() > max.precio)
 			{
-				max=listaAuto.get(i);
+				max=listaVehiculo.get(i);
 			}
 		}
 		return max;
 	}
 	
 	//Busqueda menor precio
-	public auto buscarMasBarato()
+	public vehiculo buscarMasBarato()
 	{
-		auto min = listaAuto.get(0);
-		for (int i=1 ; i< listaAuto.size(); i++)
+		vehiculo min = listaVehiculo.get(0);
+		for (int i=1 ; i< listaVehiculo.size(); i++)
 		{
-			if (listaAuto.get(i).getPrecio() < min.precio)
+			if (listaVehiculo.get(i).getPrecio() < min.precio)
 			{
-				min=listaAuto.get(i);
+				min=listaVehiculo.get(i);
 			}
 		}
 		return min;
@@ -49,31 +49,31 @@ public class concesionaria {
 	//Ordenamiento burbuja
 	public boolean ordenarMayorMenor()
 	{
-		for (int i=0 ; i<listaAuto.size() ; i++)
+		for (int i=0 ; i<listaVehiculo.size() ; i++)
 		{
-			for (int j=0; j<listaAuto.size()-1 ; j++)
+			for (int j=0; j<listaVehiculo.size()-1 ; j++)
 			{
-				if (listaAuto.get(j+1).precio > listaAuto.get(j).precio)
+				if (listaVehiculo.get(j+1).precio > listaVehiculo.get(j).precio)
 				{
-					auto aux = listaAuto.get(j);
-					listaAuto.set(j, listaAuto.get(j+1));
-					listaAuto.set(j+1,aux);				
+					vehiculo aux = listaVehiculo.get(j);
+					listaVehiculo.set(j, listaVehiculo.get(j+1));
+					listaVehiculo.set(j+1,aux);				
 				}
 			}
 		}
 		return true;
 	}
 	//Busqueda por letra
-	public auto buscarAutoLetra(char L)
+	public vehiculo buscarAutoLetra(char L)
 	{
-		for (int i =0 ; i < listaAuto.size() ; i++)
+		for (int i =0 ; i < listaVehiculo.size() ; i++)
 		{
-			for ( int j=0 ; j <listaAuto.get(i).getModeloAuto().length() ; j++)
+			for ( int j=0 ; j <listaVehiculo.get(i).getModelo().length() ; j++)
 			{
 				
-				if (listaAuto.get(i).getModeloAuto().charAt(j) == L )
+				if (listaVehiculo.get(i).getModelo().charAt(j) == L )
 				{
-					return listaAuto.get(i);
+					return listaVehiculo.get(i);
 				}
 			}
 		}
@@ -82,9 +82,18 @@ public class concesionaria {
 	//Mostrar list
 	public boolean mostrarLista()
 	{
-		for (int i=0 ; i< listaAuto.size() ; i++)
+		for (vehiculo v : listaVehiculo)
 		{
-			System.out.println(listaAuto.get(i).getMarcaAuto() +" "+listaAuto.get(i).getModeloAuto());
+			System.out.println(v.toString());
+		}
+		return true;
+	}
+	
+	public boolean mostrarVehiculo()
+	{
+		for (vehiculo v : listaVehiculo)
+		{
+			System.out.println(v.getMarca()+"  " + v.getModelo());
 		}
 		return true;
 	}

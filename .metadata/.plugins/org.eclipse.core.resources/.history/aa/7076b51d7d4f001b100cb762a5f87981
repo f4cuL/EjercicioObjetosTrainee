@@ -1,0 +1,24 @@
+package ejercicioTraineeJavaObjetos;
+
+import java.text.DecimalFormat;
+
+public class auto extends vehiculo {
+
+	protected int cantPuertas;
+	
+	public auto(int cantPuertas) {
+		super();
+		this.cantPuertas = cantPuertas;
+	}
+
+	public int getCantPuertas() {
+		return cantPuertas;
+	}
+
+	public void setCantPuertas(int cantPuertas) {
+		this.cantPuertas = cantPuertas;
+	}
+
+
+
+}

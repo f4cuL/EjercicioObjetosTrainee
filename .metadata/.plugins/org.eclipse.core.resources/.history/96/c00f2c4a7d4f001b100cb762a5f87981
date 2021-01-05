@@ -1,0 +1,12 @@
+package ejercicioTraineeJavaObjetos;
+
+public class moto extends vehiculo{
+	protected int cilindrada;
+	
+	public moto(int cilindrada, float precio) {
+		super();
+		this.cilindrada = cilindrada;
+	}
+	
+	
+}

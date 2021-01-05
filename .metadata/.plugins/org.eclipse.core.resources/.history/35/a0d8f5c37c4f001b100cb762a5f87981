@@ -1,0 +1,7 @@
+package ejercicioTraineeJavaObjetos;
+
+public class moto extends vehiculo{
+	protected int cilindradaAuto;
+	protected float precio;
+	
+}

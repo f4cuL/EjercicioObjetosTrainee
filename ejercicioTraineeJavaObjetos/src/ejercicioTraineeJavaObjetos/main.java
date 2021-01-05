@@ -7,41 +7,32 @@ import java.util.Arrays;
 public class main{
 
 	public static void main(String[] args) {
-		
-		
      //Marca: Peugeot // Modelo: 206 // Puertas: 4 // Precio: $200.000,00
-	 auto Auto1 = new auto("Peugeot","206",4,0,200000.00f);
+	 vehiculo Auto1 = new auto("Peugeot","206",200000.00f,4);
 	 //Marca: Honda // Modelo: Titan // Cilindrada: 125cc // Precio: $60.000,00
-	 auto Auto2 = new auto("Honda","Titan",4,125,60000.00f);
+	 vehiculo Moto1 = new moto("Honda","Titan",60000.00f,125);
 	 //Marca: Peugeot // Modelo: 208 // Puertas: 5 // Precio: $250.000,00
-	 auto Auto3 = new auto("Peugeot","208",5,0,250000.00f);
+	 vehiculo Auto2 = new auto("Peugeot","208",250000.00f,5);
 	 //Marca: Yamaha // Modelo: YBR // Cilindrada: 160cc // Precio: $80.500,50
-	 auto Auto4 = new auto("Yamaha","YBR",4,160,80500.50f);
+	 vehiculo Moto2 = new moto("Yamaha","YBR",80500.50f,160);
 	 
-	 //Creación de los objetos de auto
-	 
-	 //Mostrar los autos
-	 Auto1.mostrarAuto(false);
-	 Auto2.mostrarAuto(true);
-	 Auto3.mostrarAuto(false);
-	 Auto4.mostrarAuto(true);
-	 
-	 new ArrayList <auto>(Arrays.asList(Auto1,Auto2,Auto3,Auto4));
 	 
 	 //Instancia de concesionaria con lista creada
-	 concesionaria con = new concesionaria (new ArrayList <auto>(Arrays.asList(Auto1,Auto2,Auto3,Auto4)));
+	 concesionaria con = new concesionaria (new ArrayList <vehiculo>(Arrays.asList(Auto1,Moto1,Auto2,Moto2)));
 	 
 	 //DecimalFormat para el formato del precio
 	 
+	 con.mostrarLista();
+	 
 	 DecimalFormat unidad = new DecimalFormat("###,###.00");
 	 espacio();
-	 System.out.println("Vehículo más caro: "+ con.buscarMasCaro().getMarcaAuto() + " " + con.buscarMasCaro().getModeloAuto());
-	 System.out.println("Vehículo más barato: "+ con.buscarMasBarato().getMarcaAuto() + " " + con.buscarMasBarato().getModeloAuto());
-	 System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarcaAuto() + " " + con.buscarAutoLetra('Y').getModeloAuto() + " " + "$"+ unidad.format(con.buscarAutoLetra('Y').getPrecio()));
+	 System.out.println("Vehículo más caro: "+ con.buscarMasCaro().getMarca() + " " + con.buscarMasCaro().getModelo());
+	 System.out.println("Vehículo más barato: "+ con.buscarMasBarato().getMarca() + " " + con.buscarMasBarato().getModelo());
+	 System.out.println("Vehículo que contiene en el modelo la letra ‘Y’: " + con.buscarAutoLetra('Y').getMarca() + " " + con.buscarAutoLetra('Y').getModelo() + " " + "$"+ unidad.format(con.buscarAutoLetra('Y').getPrecio()));
 	 espacio();
 	 System.out.println("Vehículos ordenados por precio de mayor a menor:");
 	 con.ordenarMayorMenor();
-	 con.mostrarLista();
+	 con.mostrarVehiculo();
 	 
 	}
 	
